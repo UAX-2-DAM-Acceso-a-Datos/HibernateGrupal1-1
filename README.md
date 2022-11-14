@@ -32,4 +32,7 @@ Acciones para entidad Revisión:
 
 ## Autores ✒️
 
-* **Nombre** - [Nombre](https://github.com/xxx)
+* **Aitor** - [Aitor]([https://github.com/AitorTheThinker](https://github.com/AitorTheThinker))
+* **Javier** - [Javier]([https://github.com/Medra235](https://github.com/Medra235))
+* **Marcos** - [Marcos]([https://github.com/MVillena1](https://github.com/MVillena1))
+
