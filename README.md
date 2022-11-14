@@ -35,4 +35,6 @@ Acciones para entidad Revisión:
 * **Aitor** - [Aitor]([https://github.com/AitorTheThinker](https://github.com/AitorTheThinker))
 * **Javier** - [Javier]([https://github.com/Medra235](https://github.com/Medra235))
 * **Marcos** - [Marcos]([https://github.com/MVillena1](https://github.com/MVillena1))
+* **Frank** - [Marcos]([https://github.com/Fraankz](https://github.com/Fraankz))
+
 
