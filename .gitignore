@@ -3,3 +3,4 @@ bin/Mi codigo.txt
 bin/.settings/org.eclipse.jdt.core.prefs
 bin/.settings/org.eclipse.m2e.core.prefs
 target/*
+.classpath
