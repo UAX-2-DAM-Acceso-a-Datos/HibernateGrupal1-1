@@ -27,4 +27,8 @@ public class RevisionTecnica {
 		this.calificacion = calificacion;
 	}
 	
+	public String toString() {
+		return "Código:" + codigo + " Calificación:" + calificacion;
+	}
+	
 }
