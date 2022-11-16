@@ -21,7 +21,7 @@ public class Vehiculo {
 	
 	@OneToOne
 	@JoinColumn(name = "codigo_revisiontecnica", nullable = false)
-	private Vehiculo vehiculo;
+	private RevisionTecnica revisiontecnica;
 
 
 	public String getMatricula() {
@@ -54,19 +54,19 @@ public class Vehiculo {
 	}
 
 
-	public Vehiculo getVehiculo() {
-		return vehiculo;
+	public RevisionTecnica getRevisiontecnica() {
+		return revisiontecnica;
 	}
 
 
-	public void setVehiculo(Vehiculo vehiculo) {
-		this.vehiculo = vehiculo;
+	public void setRevisiontecnica(RevisionTecnica revisiontecnica) {
+		this.revisiontecnica = revisiontecnica;
 	}
 
 
 	@Override
 	public String toString() {
-		return "Vehiculo [matricula=" + matricula + ", marca=" + marca + ", modelo=" + modelo + ", vehiculo=" + vehiculo
+		return "Vehiculo [matricula=" + matricula + ", marca=" + marca + ", modelo=" + modelo + ", vehiculo=" + revisiontecnica
 				+ "]";
 	}
 
