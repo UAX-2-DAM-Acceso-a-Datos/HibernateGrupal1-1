@@ -1,8 +1,22 @@
 package entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+	
+@Entity
+@Table(name = "revisiontecnica")
 public class RevisionTecnica {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "codigo")
 	
 	private int codigo;
+	
+	@Column(name = "calificacion")
 	private double calificacion;
 	
 	public int getCodigo() {
@@ -11,6 +25,8 @@ public class RevisionTecnica {
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
+	
+	
 	public double getCalificacion() {
 		return calificacion;
 	}
