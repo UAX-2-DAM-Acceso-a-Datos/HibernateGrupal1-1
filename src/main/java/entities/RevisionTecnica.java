@@ -15,6 +15,8 @@ public class RevisionTecnica {
 	@Column(name = "codigo")
 	
 	private int codigo;
+	
+	@Column(name = "calificacion")
 	private double calificacion;
 	
 	public int getCodigo() {
