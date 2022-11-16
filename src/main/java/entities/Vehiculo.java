@@ -21,7 +21,7 @@ public class Vehiculo {
 	
 	@OneToOne
 	@JoinColumn(name = "codigo_revisiontecnica", nullable = false)
-	private RevisionTecnica revisiontecnica;
+	RevisionTecnica revisiontecnica;
 
 
 	public String getMatricula() {

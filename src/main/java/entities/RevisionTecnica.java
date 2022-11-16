@@ -11,10 +11,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "revisiontecnica")
 public class RevisionTecnica {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "codigo")
-	
 	private int codigo;
 	
 	@Column(name = "calificacion")
