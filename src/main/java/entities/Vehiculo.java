@@ -1,17 +1,27 @@
 package entities;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "vehiculo")
 public class Vehiculo {
 
+	@Column(name = "matricula")
 	String matricula;
-	String marca;
-	String modelo;
-	String revision;
-
 	
-	public String toString() {
-		return "Vehiculo [matricula=" + matricula + ", marca=" + marca + ", modelo=" + modelo + ", revision=" + revision
-				+ "]";
-	}
+	@Column(name = "marca")
+	String marca;
+	
+	@Column(name = "modelo")
+	String modelo;
+	
+	@OneToOne
+	@JoinColumn(name = "codigo_revisiontecnica", nullable = false)
+	private Vehiculo vehiculo;
 
 
 	public String getMatricula() {
@@ -44,15 +54,21 @@ public class Vehiculo {
 	}
 
 
-	public String getRevision() {
-		return revision;
+	public Vehiculo getVehiculo() {
+		return vehiculo;
 	}
 
 
-	public void setRevision(String revision) {
-		this.revision = revision;
+	public void setVehiculo(Vehiculo vehiculo) {
+		this.vehiculo = vehiculo;
 	}
-	
-	
+
+
+	@Override
+	public String toString() {
+		return "Vehiculo [matricula=" + matricula + ", marca=" + marca + ", modelo=" + modelo + ", vehiculo=" + vehiculo
+				+ "]";
+	}
+
 	
 }
