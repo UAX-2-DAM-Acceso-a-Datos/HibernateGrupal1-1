@@ -6,7 +6,7 @@
         
         <!-- Datos de conexión con la base de datos- Driver, URL, user, password -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/accesodatos</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/concesionario</property>
         <property name="connection.username">root</property>
         <property name="connection.password"></property>
 
@@ -29,7 +29,9 @@
          <!-- <property name="hbm2ddl.auto">create</property>-->
 		
 		<!-- Clases que contienen las anotaciones de mapeo -->
-        <mapping class="entities.Cuenta" />
+       <mapping class="entities.Vehiculo"/>
+       <mapping class="entities.RevisionTecnica"/>
+       
     </session-factory>
 
 </hibernate-configuration>
