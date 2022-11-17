@@ -73,5 +73,32 @@ public class Vehiculo {
 				+ "]";
 	}
 
+
+	public void beginTransaction() {
+	}
+
+
+	public Object getTransaction() {
+		return null;
+	}
+
+
+	public static Vehiculo getCurrentSession() {
+		return null;
+	}
+
+
+	public void delete(Object vehiculo) {
+	}
+
+	
+	public void commit() {
+		
+	}
+	
+	
+	public void close() {
+	}
+
 	
 }

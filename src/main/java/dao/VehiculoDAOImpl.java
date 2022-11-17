@@ -24,7 +24,12 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 	}
 	@Override
 	public boolean deleteVehiculo(String matricula, String marca, String modelo, RevisionTecnica revisiontecnica) {
-		// TODO Auto-generated method stub
+		Vehiculo sesion = Vehiculo.getCurrentSession();
+				sesion.beginTransaction();
+				Object Vehiculo = null;
+				sesion.delete(Vehiculo);
+				((entities.Vehiculo) sesion.getTransaction()).commit();
+				sesion.close();
 		return false;
 	}
 
