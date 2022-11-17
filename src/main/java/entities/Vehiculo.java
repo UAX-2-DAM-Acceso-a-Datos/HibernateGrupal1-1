@@ -18,10 +18,10 @@ public class Vehiculo {
 	String matricula;
 	
 	@Column(name = "marca")
-	@Size(min=3, max=20)
 	String marca;
 	
 	@Column(name = "modelo")
+	@Size(min=3, max=20)
 	String modelo;
 	
 	@OneToOne
