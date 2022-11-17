@@ -2,9 +2,12 @@ package dao;
 
 import java.util.List;
 
+import org.hibernate.Session;
+
 import entities.RevisionTecnica;
 import entities.Vehiculo;
 import idao.IVehiculoDAO;
+import utils.HibernateUtils;
 
 public class VehiculoDAOImpl implements IVehiculoDAO {
 
@@ -16,10 +19,9 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 
 	@Override
 	public boolean modificarVehiculo(String matricula, String marca, String modelo, RevisionTecnica revisiontecnica) {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
-
 	@Override
 	public boolean deleteVehiculo(String matricula, String marca, String modelo, RevisionTecnica revisiontecnica) {
 		// TODO Auto-generated method stub
