@@ -3,6 +3,7 @@ package dao;
 import java.util.List;
 
 import org.hibernate.Session;
+import org.hibernate.exception.ConstraintViolationException;
 
 import entities.RevisionTecnica;
 import entities.Vehiculo;
@@ -14,18 +15,27 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 	@Override
 	public boolean addVehiculo(Vehiculo v) {
 		// TODO Auto-generated method stub
-		Session sesion = HibernateUtils.getSessionFactory().openSession();
-		sesion.beginTransaction();
+		Session session = HibernateUtils.getSessionFactory().openSession();
+		session.beginTransaction();
 		
 		RevisionTecnica r = new RevisionTecnica();
 		r.setCalificacion(0);
-		sesion.save(r);
+		session.save(r);
 		
 		v.setRevisiontecnica(r);
 		
-		sesion.save(v);
-		sesion.getTransaction().commit();
-		sesion.close();
+		try {
+			
+			v.setModelo("a");
+			session.save(v);
+			session.getTransaction().commit();
+			session.close();
+			
+		} catch (ConstraintViolationException e) {
+			session.getTransaction().rollback();
+			System.out.println("No se ha podido añadir el vehiculo");
+			// TODO: handle exception
+		}
 
 		return false;
 	}

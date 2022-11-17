@@ -18,9 +18,9 @@ public class Vehiculo {
 	String matricula;
 	
 	@Column(name = "marca")
+	@Size(min=3, max=20)
 	String marca;
 	
-	@Size(min=3, max=20)
 	@Column(name = "modelo")
 	String modelo;
 	
