@@ -2,6 +2,7 @@ package entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -12,6 +13,7 @@ import jakarta.validation.constraints.Size;
 @Table(name = "vehiculo")
 public class Vehiculo {
 
+	@Id
 	@Column(name = "matricula")
 	String matricula;
 	
@@ -23,7 +25,7 @@ public class Vehiculo {
 	String modelo;
 	
 	@OneToOne
-	@JoinColumn(name = "codigo_revisiontecnica", nullable = false)
+	@JoinColumn(name = "codigo_revisiontecnica")
 	RevisionTecnica revisiontecnica;
 
 
