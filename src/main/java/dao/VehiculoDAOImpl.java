@@ -6,7 +6,7 @@ import entities.RevisionTecnica;
 import entities.Vehiculo;
 import idao.IVehiculoDAO;
 
-public class VehiculoDAOIMP implements IVehiculoDAO {
+public class VehiculoDAOImpl implements IVehiculoDAO {
 
 	@Override
 	public boolean addVehiculo(String matricula, String marca, String modelo, RevisionTecnica revisiontecnica) {
