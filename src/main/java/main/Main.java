@@ -1,5 +1,6 @@
 package main;
 
+import dao.RevisionTecnicaImpl;
 import dao.VehiculoDAOImpl;
 import entities.RevisionTecnica;
 import entities.Vehiculo;
@@ -27,6 +28,15 @@ public class Main {
 		
 		vehDao.addVehiculo(v);
 		HibernateUtils.getSessionFactory().close();
+		
+		RevisionTecnicaImpl revDAO= new RevisionTecnicaImpl();
+		
+		RevisionTecnica r1= new RevisionTecnica();
+		r1.setCalificacion(1);
+		r1.setCodigo(500);
+		r1.setVehiculo(v);
+		
+		
 	}
 
 }

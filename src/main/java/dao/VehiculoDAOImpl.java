@@ -31,7 +31,7 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 	}
 
 	@Override
-	public boolean modificarVehiculo(String matricula, String marca, String modelo, RevisionTecnica revisiontecnica) {
+	public boolean modificarVehiculo(RevisionTecnica r1) {
 		
 		return false;
 	}
