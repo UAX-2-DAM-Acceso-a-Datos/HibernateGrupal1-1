@@ -5,3 +5,4 @@ bin/.settings/org.eclipse.m2e.core.prefs
 target/*
 .classpath
 /target/
+src/main/java/entities/RevisionTecnica.java.rej
