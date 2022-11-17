@@ -12,8 +12,21 @@ import utils.HibernateUtils;
 public class VehiculoDAOImpl implements IVehiculoDAO {
 
 	@Override
-	public boolean addVehiculo(String matricula, String marca, String modelo, RevisionTecnica revisiontecnica) {
+	public boolean addVehiculo(Vehiculo v) {
 		// TODO Auto-generated method stub
+		Session sesion = HibernateUtils.getSessionFactory().openSession();
+		sesion.beginTransaction();
+		
+		RevisionTecnica r = new RevisionTecnica();
+		r.setCalificacion(0);
+		sesion.save(r);
+		
+		v.setRevisiontecnica(r);
+		
+		sesion.save(v);
+		sesion.getTransaction().commit();
+		sesion.close();
+
 		return false;
 	}
 
