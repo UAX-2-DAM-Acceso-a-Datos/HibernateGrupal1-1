@@ -7,9 +7,9 @@ import entities.Vehiculo;
 
 public interface IRevisionTecnica {
 
-	public boolean addRevisionTecnica(int codigo, double calificacion, Vehiculo vehiculo);
-	public boolean modificarRevisionTecnica(int codigo, double calificacion, Vehiculo vehiculo);
-	public  boolean deleteRevisionTecnica(int codigo, double calificacion, Vehiculo vehiculo);
-	public List<Vehiculo> listarRevisionTecnica(int codigo, double calificacion, Vehiculo vehiculo);
-	
+	public boolean addRevisionTecnica(RevisionTecnica r1);
+	public boolean modificarRevisionTecnica(RevisionTecnica r1);
+	public  boolean deleteRevisionTecnica(RevisionTecnica r1);
+	public List<RevisionTecnica> listarRevisionTecnica();
+		
 }

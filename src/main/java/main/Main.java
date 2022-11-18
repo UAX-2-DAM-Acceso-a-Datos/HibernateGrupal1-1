@@ -14,7 +14,7 @@ public class Main {
 	}
 	
 	public Main() {
-	
+		//Vehiculo pruebas de métodos
 		VehiculoDAOImpl vehDao = new VehiculoDAOImpl();
 		
 		Vehiculo v = new Vehiculo();
@@ -33,15 +33,21 @@ public class Main {
 
 	
 		
-		HibernateUtils.getSessionFactory().close();
+	
+		//Revision Técnica pruebas de métodos (Falta por completar)
 		
-		RevisionTecnicaImpl revDAO= new RevisionTecnicaImpl();
+		/*RevisionTecnicaImpl revDAO= new RevisionTecnicaImpl();
 		
 		RevisionTecnica r1= new RevisionTecnica();
-		r1.setCalificacion(1);
+		r1.setCalificacion(10);
 		r1.setCodigo(500);
 		r1.setVehiculo(v);
 		
+		revDAO.listarRevisionTecnica();
+		
+		revDAO.addRevisionTecnica(r1); */
+		
+		HibernateUtils.getSessionFactory().close();
 		
 	}
 

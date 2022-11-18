@@ -12,9 +12,10 @@ import utils.HibernateUtils;
 
 public class VehiculoDAOImpl implements IVehiculoDAO {
 
+	//Añadir un vehículo
 	@Override
 	public boolean addVehiculo(Vehiculo v) {
-		// TODO Auto-generated method stub
+		
 		Session session = HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
 		
@@ -32,13 +33,14 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 			
 		} catch (ConstraintViolationException e) {
 			session.getTransaction().rollback();
-			System.out.println("No se ha podido a�adir el vehiculo");
-			// TODO: handle exception
+			System.out.println("No se ha podido añadir el vehiculo");
+		
 		}
 
 		return false;
 	}
 
+	//Modificar un vehículo
 	@Override
 	public boolean modificarVehiculo(Vehiculo v) {
 		Session sesion = HibernateUtils.getSessionFactory().openSession();
@@ -49,6 +51,7 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 		return false;
 	}
 	
+	//Borrar un vehículo
 	@Override
 	public boolean deleteVehiculo(String matricula, String marca, String modelo, RevisionTecnica revisiontecnica) {
 		Vehiculo sesion = Vehiculo.getCurrentSession();
@@ -59,11 +62,12 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 				sesion.close();
 		return false;
 	}
-
+	
+	//Listar vehículos
 	@Override
 	public List<Vehiculo> listarVehiculo(String matricula, String marca, String modelo,
 			RevisionTecnica revisiontecnica) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
