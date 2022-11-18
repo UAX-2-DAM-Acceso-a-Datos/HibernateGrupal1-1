@@ -53,7 +53,7 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 	
 	//Borrar un vehículo
 	@Override
-	public boolean deleteVehiculo(String matricula, String marca, String modelo, RevisionTecnica revisiontecnica) {
+	public boolean deleteVehiculo(Vehiculo v) {
 		Vehiculo sesion = Vehiculo.getCurrentSession();
 				sesion.beginTransaction();
 				Object Vehiculo = null;

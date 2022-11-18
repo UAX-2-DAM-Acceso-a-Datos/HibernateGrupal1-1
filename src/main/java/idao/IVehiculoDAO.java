@@ -8,9 +8,8 @@ import entities.Vehiculo;
 public interface IVehiculoDAO {
 	
 	public boolean addVehiculo(Vehiculo v);
-	public boolean modificarVehiculo(Vehiculo V);
-	public  boolean deleteVehiculo(String matricula, String marca, String modelo, RevisionTecnica revisiontecnica);
+	public boolean modificarVehiculo(Vehiculo v);
+	public  boolean deleteVehiculo(Vehiculo v);
 	public List<Vehiculo> listarVehiculo(String matricula, String marca, String modelo, RevisionTecnica revisiontecnica);
-	
 	
 }
