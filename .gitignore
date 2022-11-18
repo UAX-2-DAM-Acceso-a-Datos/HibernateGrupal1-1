@@ -1,3 +1,9 @@
 .project
 bin/.settings/org.eclipse.jdt.core.prefs
 bin/.settings/org.eclipse.m2e.core.prefs
+.classpath
+src/main/java/main/Main.java
+target/HibernatePlantilla-0.0.1-SNAPSHOT.jar
+target/classes/main/Main.class
+target/classes/META-INF/maven/com.hibernateplantilla/HibernatePlantilla/pom.properties
+target/classes/META-INF/maven/com.hibernateplantilla/HibernatePlantilla/pom.xml
