@@ -21,8 +21,18 @@ public class Main {
 		v.setMatricula("Goku");
 		v.setMarca("Te");
 		v.setModelo("Sa");
+		
+		Vehiculo v2 = new Vehiculo();
+		v.setMatricula("Krilin");
+		v.setMarca("Te");
+		v.setModelo("Sa");
 	
 		vehDao.addVehiculo(v);
+		
+		vehDao.modificarVehiculo(v);
+
+	
+		
 		HibernateUtils.getSessionFactory().close();
 		
 		RevisionTecnicaImpl revDAO= new RevisionTecnicaImpl();

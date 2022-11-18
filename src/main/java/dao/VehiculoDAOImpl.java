@@ -33,7 +33,7 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 			
 		} catch (ConstraintViolationException e) {
 			session.getTransaction().rollback();
-			System.out.println("No se ha podido añadir el vehiculo");
+			System.out.println("No se ha podido aï¿½adir el vehiculo");
 			// TODO: handle exception
 		}
 
@@ -41,10 +41,15 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 	}
 
 	@Override
-	public boolean modificarVehiculo(RevisionTecnica r1) {
-		
+	public boolean modificarVehiculo(Vehiculo v) {
+		Session sesion = HibernateUtils.getSessionFactory().openSession();
+				sesion.beginTransaction();
+				sesion.save(v);
+				sesion.getTransaction().commit();
+				sesion.close();
 		return false;
 	}
+	
 	@Override
 	public boolean deleteVehiculo(String matricula, String marca, String modelo, RevisionTecnica revisiontecnica) {
 		Vehiculo sesion = Vehiculo.getCurrentSession();
