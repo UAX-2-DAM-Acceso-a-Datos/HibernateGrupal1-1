@@ -25,7 +25,6 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 		v.setRevisiontecnica(r);
 		
 		try {
-			
 			v.setModelo("a");
 			session.save(v);
 			session.getTransaction().commit();
