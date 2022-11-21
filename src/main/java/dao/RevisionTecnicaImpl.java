@@ -25,7 +25,11 @@ public class RevisionTecnicaImpl implements IRevisionTecnica{
 	//Modificar revisión técnica
 	@Override
 	public boolean modificarRevisionTecnica(RevisionTecnica r1) {
-		
+		Session sesion =HibernateUtils.getSessionFactory().openSession();
+				sesion.beginTransaction();
+				sesion.save(r1);
+				sesion.getTransaction().commit();
+				sesion.close();
 		return false;
 	}
 	
