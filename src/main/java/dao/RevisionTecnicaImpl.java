@@ -37,7 +37,12 @@ public class RevisionTecnicaImpl implements IRevisionTecnica{
 	@Override
 	public boolean deleteRevisionTecnica(RevisionTecnica r1) {
 		
-		return false;
+		Session sesion =HibernateUtils.getSessionFactory().openSession();
+				sesion.beginTransaction();
+				sesion.delete(r1);
+				sesion.getTransaction().commit();
+				sesion.close();
+				return false;
 	}
 	
 	//Listar revisiones técnicas
