@@ -14,35 +14,51 @@ public class RevisionTecnicaImpl implements IRevisionTecnica{
 	//Añadir revisión técnica
 	@Override
 	public boolean addRevisionTecnica(RevisionTecnica r1) {
-		Session session=HibernateUtils.getSessionFactory().openSession();
-		session.beginTransaction();
-		session.save(r1);
-		session.getTransaction().commit();
-		System.out.println(r1);
-		
-		return false;
+		try {
+			Session session=HibernateUtils.getSessionFactory().openSession();
+			session.beginTransaction();
+			session.save(r1);
+			session.getTransaction().commit();
+			System.out.println(r1);
+			return true;
+			
+		} catch (Exception e) {
+			return false;
+		}
+
 	}
 	//Modificar revisión técnica
 	@Override
 	public boolean modificarRevisionTecnica(RevisionTecnica r1) {
-		Session sesion =HibernateUtils.getSessionFactory().openSession();
-				sesion.beginTransaction();
-				sesion.save(r1);
-				sesion.getTransaction().commit();
-				sesion.close();
-		return false;
+		try {
+			Session sesion =HibernateUtils.getSessionFactory().openSession();
+			sesion.beginTransaction();
+			sesion.save(r1);
+			sesion.getTransaction().commit();
+			sesion.close();
+			return true;
+			
+		} catch (Exception e) {
+			return false;
+		}
+
 	}
 	
 	//Borrar revisión técnica
 	@Override
 	public boolean deleteRevisionTecnica(RevisionTecnica r1) {
-		
-		Session sesion =HibernateUtils.getSessionFactory().openSession();
-				sesion.beginTransaction();
-				sesion.delete(r1);
-				sesion.getTransaction().commit();
-				sesion.close();
-				return false;
+		try {
+			Session sesion =HibernateUtils.getSessionFactory().openSession();
+			sesion.beginTransaction();
+			sesion.delete(r1);
+			sesion.getTransaction().commit();
+			sesion.close();
+			return true;
+			
+		} catch (Exception e) {
+			return false;
+		}
+
 	}
 	
 	//Listar revisiones técnicas
@@ -50,7 +66,7 @@ public class RevisionTecnicaImpl implements IRevisionTecnica{
 	public List<RevisionTecnica> listarRevisionTecnica() {
 		Session session=HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
-		
+
 		List<RevisionTecnica> results=(List<RevisionTecnica>)session.createQuery("from RevisionTecnica").list();
 		
 				for(RevisionTecnica r :results) {

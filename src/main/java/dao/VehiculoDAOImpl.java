@@ -15,52 +15,65 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 	//Añadir un vehículo
 	@Override
 	public boolean addVehiculo(Vehiculo v) {
-		
-		Session session = HibernateUtils.getSessionFactory().openSession();
-		session.beginTransaction();
-		
-		RevisionTecnica r = new RevisionTecnica();
-		r.setCalificacion(0);
-		session.save(r);
-		
-		v.setRevisiontecnica(r);
-		
 		try {
-			v.setModelo("a");
-			session.save(v);
-			session.getTransaction().commit();
-			session.close();
+			Session session = HibernateUtils.getSessionFactory().openSession();
+			session.beginTransaction();
 			
-		} catch (ConstraintViolationException e) {
-			session.getTransaction().rollback();
-			System.out.println("No se ha podido añadir el vehiculo");
-		
-		}
+			RevisionTecnica r = new RevisionTecnica();
+			r.setCalificacion(0);
+			session.save(r);
+			
+			v.setRevisiontecnica(r);
+			
+			try {
+				v.setModelo("a");
+				session.save(v);
+				session.getTransaction().commit();
+				session.close();
+				
+			} catch (ConstraintViolationException e) {
+				session.getTransaction().rollback();
+				System.out.println("No se ha podido añadir el vehiculo");
+			
+			}
+			return true;
 
-		return false;
+		} catch (Exception e) {
+			return false;		
+		}
 	}
 
 	//Modificar un vehículo
 	@Override
 	public boolean modificarVehiculo(Vehiculo v) {
-		Session sesion = HibernateUtils.getSessionFactory().openSession();
-				sesion.beginTransaction();
-				sesion.save(v);
-				sesion.getTransaction().commit();
-				sesion.close();
-		return false;
+		try {
+			Session sesion = HibernateUtils.getSessionFactory().openSession();
+			sesion.beginTransaction();
+			sesion.save(v);
+			sesion.getTransaction().commit();
+			sesion.close();
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+
 	}
 	
 	//Borrar un vehículo
 	@Override
 	public boolean deleteVehiculo(Vehiculo v) {
-		Vehiculo sesion = Vehiculo.getCurrentSession();
-				sesion.beginTransaction();
-				Object Vehiculo = null;
-				sesion.delete(Vehiculo);
-				((entities.Vehiculo) sesion.getTransaction()).commit();
-				sesion.close();
-		return false;
+		try {
+			Vehiculo sesion = Vehiculo.getCurrentSession();
+			sesion.beginTransaction();
+			Object Vehiculo = null;
+			sesion.delete(Vehiculo);
+			((entities.Vehiculo) sesion.getTransaction()).commit();
+			sesion.close();
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+		
 	}
 	
 	//Listar vehículos
