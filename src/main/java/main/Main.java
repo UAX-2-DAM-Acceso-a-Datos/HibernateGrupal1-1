@@ -30,6 +30,8 @@ public class Main {
 		vehDao.addVehiculo(v);
 		
 		vehDao.modificarVehiculo(v);
+		
+		vehDao.listarVehiculo();
 
 	
 		

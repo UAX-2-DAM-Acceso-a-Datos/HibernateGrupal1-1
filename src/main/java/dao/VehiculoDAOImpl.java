@@ -75,9 +75,8 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 		}
 		
 	}
-	
-	//Listar vehículos
-	
+
+	@Override
 	public List<Vehiculo> listarVehiculo() {
 		Session session=HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
@@ -88,13 +87,6 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 					System.out.println(results);
 				}
 				return results;
-	}
-
-	@Override
-	public List<Vehiculo> listarVehiculo(String matricula, String marca, String modelo,
-			RevisionTecnica revisiontecnica) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 		
