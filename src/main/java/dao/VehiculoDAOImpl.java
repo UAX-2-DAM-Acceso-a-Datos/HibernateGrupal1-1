@@ -2,6 +2,7 @@ package dao;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Session;
 import org.hibernate.exception.ConstraintViolationException;
 
@@ -11,6 +12,11 @@ import idao.IVehiculoDAO;
 import utils.HibernateUtils;
 
 public class VehiculoDAOImpl implements IVehiculoDAO {
+	
+	static Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
+	//logger.info("[CLASE]metodo-Mensaje informativo");
+
+
 
 	//Añadir un vehículo
 	@Override
@@ -80,6 +86,7 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 				}
 				return results;
 	}
+	
 
 		
 }

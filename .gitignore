@@ -6,3 +6,4 @@ target/*
 .classpath
 /target/
 src/main/java/entities/RevisionTecnica.java.rej
+avisos.log

@@ -33,13 +33,13 @@ public class Main {
 		 * */
 		
 		Vehiculo v2 = new Vehiculo();
-		v.setMatricula("Krilin");
-		v.setMarca("Te");
-		v.setModelo("Sa");
+		v2.setMatricula("Krilin");
+		v2.setMarca("Te");
+		v2.setModelo("Sa");
 	
 		vehDao.addVehiculo(v);
 
-		//vehDao.modificarVehiculo(v);
+		vehDao.modificarVehiculo(v2);
 		
 		//vehDao.deleteVehiculo(v2);
 		
