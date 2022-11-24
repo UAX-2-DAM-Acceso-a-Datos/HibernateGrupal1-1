@@ -34,7 +34,7 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 			session.beginTransaction();
 			
 			RevisionTecnica r = new RevisionTecnica();
-			r.setCalificacion(0);
+			r.setCalificacion(10);
 			session.save(r);
 			v.setRevisiontecnica(r);
 			

@@ -17,6 +17,14 @@ public class RevisionTecnicaImpl implements IRevisionTecnica{
 		try {
 			Session session=HibernateUtils.getSessionFactory().openSession();
 			session.beginTransaction();
+			
+			Vehiculo v = new Vehiculo();
+			v.setMatricula("ZZZZ");
+			v.setMarca("GT");
+			v.setModelo("Super");
+			v.setRevisiontecnica(r1);
+			session.save(v);
+			
 			session.save(r1);
 			session.getTransaction().commit();
 			System.out.println(r1);
