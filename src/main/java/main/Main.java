@@ -1,5 +1,7 @@
 package main;
 
+import org.hibernate.exception.ConstraintViolationException;
+
 import dao.RevisionTecnicaImpl;
 import dao.VehiculoDAOImpl;
 import entities.RevisionTecnica;
@@ -23,14 +25,14 @@ public class Main {
 		v.setModelo("Sa");
 		
 	
-		/*try {
+		try {
 			v.setModelo("Sa");
 		} catch (ConstraintViolationException e) {
-			session.getTransaction().rollback();
+			
 			System.out.println("No se ha podido añadir el vehiculo");
 		}
-		 * 
-		 * */
+		 
+		 
 		
 		Vehiculo v2 = new Vehiculo();
 		v2.setMatricula("Krilin");

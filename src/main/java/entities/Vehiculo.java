@@ -6,8 +6,9 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
-import jakarta.validation.constraints.Size;
+
 
 @Entity
 @Table(name = "vehiculo")
@@ -20,8 +21,8 @@ public class Vehiculo {
 	@Column(name = "marca")
 	String marca;
 	
-	@Column(name = "modelo")
 	@Size(min=3, max=20)
+	@Column(name = "modelo")
 	String modelo;
 	
 	@OneToOne
