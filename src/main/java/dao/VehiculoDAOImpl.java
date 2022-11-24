@@ -25,7 +25,7 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 			
 			Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
 			logger.debug("DebugVehiculo");
-			logger.info("InfoVehiculo");
+			logger.info("[CuentaDao] [addVehiculo] - Entrada al metodo");
 			logger.warn("WarnVehiculo");
 			logger.error("ErrorVehiculo");
 			logger.fatal("FatalVehiculo");
@@ -53,6 +53,10 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 	@Override
 	public boolean modificarVehiculo(Vehiculo v) {
 		try {
+			Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
+			logger.info("[CuentaDao] [modificarVehiculo] - Entrada al metodo");
+
+			
 			Session sesion = HibernateUtils.getSessionFactory().openSession();
 			sesion.beginTransaction();
 			sesion.save(v);
@@ -69,6 +73,9 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 	@Override
 	public boolean deleteVehiculo(Vehiculo v) {
 		try {
+			Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
+			logger.info("[CuentaDao] [deleteVehiculo] - Entrada al metodo");
+			
 			Vehiculo sesion = Vehiculo.getCurrentSession();
 			sesion.beginTransaction();
 			Object Vehiculo = null;
@@ -84,6 +91,9 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 
 	@Override
 	public List<Vehiculo> listarVehiculo() {
+		Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
+		logger.info("[CuentaDao] [listarVehiculo] - Entrada al metodo");
+		
 		Session session=HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
 

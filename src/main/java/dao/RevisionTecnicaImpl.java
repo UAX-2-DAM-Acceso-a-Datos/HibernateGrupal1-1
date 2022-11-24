@@ -2,6 +2,7 @@ package dao;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Session;
 
 import entities.RevisionTecnica;
@@ -15,6 +16,9 @@ public class RevisionTecnicaImpl implements IRevisionTecnica{
 	@Override
 	public boolean addRevisionTecnica(RevisionTecnica r1) {
 		try {
+			Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
+			logger.info("[CuentaDao] [addRevisionTecnica] - Entrada al metodo");
+			
 			Session session=HibernateUtils.getSessionFactory().openSession();
 			session.beginTransaction();
 			
@@ -39,6 +43,9 @@ public class RevisionTecnicaImpl implements IRevisionTecnica{
 	@Override
 	public boolean modificarRevisionTecnica(RevisionTecnica r1) {
 		try {
+			Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
+			logger.info("[CuentaDao] [modificarRevisionTecnica] - Entrada al metodo");
+			
 			Session sesion =HibernateUtils.getSessionFactory().openSession();
 			sesion.beginTransaction();
 			sesion.save(r1);
@@ -56,6 +63,9 @@ public class RevisionTecnicaImpl implements IRevisionTecnica{
 	@Override
 	public boolean deleteRevisionTecnica(RevisionTecnica r1) {
 		try {
+			Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
+			logger.info("[CuentaDao] [deleteRevisionTecnica] - Entrada al metodo");
+			
 			Session sesion =HibernateUtils.getSessionFactory().openSession();
 			sesion.beginTransaction();
 			sesion.delete(r1);
@@ -72,6 +82,9 @@ public class RevisionTecnicaImpl implements IRevisionTecnica{
 	//Listar revisiones técnicas
 	@Override
 	public List<RevisionTecnica> listarRevisionTecnica() {
+		Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
+		logger.info("[CuentaDao] [listarRevisionTecnica] - Entrada al metodo");
+		
 		Session session=HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
 
