@@ -12,8 +12,8 @@ import idao.IVehiculoDAO;
 import utils.HibernateUtils;
 
 public class VehiculoDAOImpl implements IVehiculoDAO {
-	
-	static Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
+
+	//static Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
 	//logger.info("[CLASE]metodo-Mensaje informativo");
 
 
@@ -22,6 +22,10 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 	@Override
 	public boolean addVehiculo(Vehiculo v) {
 		try {
+			
+			Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
+			logger.info("CreateVehiculo");
+			
 			Session session = HibernateUtils.getSessionFactory().openSession();
 			session.beginTransaction();
 			
