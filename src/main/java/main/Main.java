@@ -28,8 +28,10 @@ public class Main {
 		v.setModelo("Sa");
 	
 		vehDao.addVehiculo(v);
-		
+
 		vehDao.modificarVehiculo(v);
+		
+		vehDao.deleteVehiculo(v2);
 		
 		vehDao.listarVehiculo();
 
@@ -38,16 +40,21 @@ public class Main {
 	
 		//Revision Técnica pruebas de métodos (Falta por completar)
 		
-		/*RevisionTecnicaImpl revDAO= new RevisionTecnicaImpl();
+		RevisionTecnicaImpl revDAO= new RevisionTecnicaImpl();
 		
 		RevisionTecnica r1= new RevisionTecnica();
 		r1.setCalificacion(10);
 		r1.setCodigo(500);
 		r1.setVehiculo(v);
 		
+		revDAO.addRevisionTecnica(r1); 
 		revDAO.listarRevisionTecnica();
+
+		revDAO.modificarRevisionTecnica(r1);
 		
-		revDAO.addRevisionTecnica(r1); */
+		revDAO.deleteRevisionTecnica(r1);
+		
+		revDAO.listarRevisionTecnica();
 		
 		HibernateUtils.getSessionFactory().close();
 		
