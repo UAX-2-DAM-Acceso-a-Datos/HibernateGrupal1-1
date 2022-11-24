@@ -24,7 +24,11 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 		try {
 			
 			Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
-			logger.info("CreateVehiculo");
+			logger.debug("DebugVehiculo");
+			logger.info("InfoVehiculo");
+			logger.warn("WarnVehiculo");
+			logger.error("ErrorVehiculo");
+			logger.fatal("FatalVehiculo");
 			
 			Session session = HibernateUtils.getSessionFactory().openSession();
 			session.beginTransaction();
