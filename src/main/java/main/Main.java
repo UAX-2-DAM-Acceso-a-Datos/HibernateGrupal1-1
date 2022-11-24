@@ -22,6 +22,16 @@ public class Main {
 		v.setMarca("Te");
 		v.setModelo("Sa");
 		
+	
+		/*try {
+			v.setModelo("Sa");
+		} catch (ConstraintViolationException e) {
+			session.getTransaction().rollback();
+			System.out.println("No se ha podido añadir el vehiculo");
+		}
+		 * 
+		 * */
+		
 		Vehiculo v2 = new Vehiculo();
 		v.setMatricula("Krilin");
 		v.setMarca("Te");
@@ -29,14 +39,12 @@ public class Main {
 	
 		vehDao.addVehiculo(v);
 
-		vehDao.modificarVehiculo(v);
+		//vehDao.modificarVehiculo(v);
 		
-		vehDao.deleteVehiculo(v2);
+		//vehDao.deleteVehiculo(v2);
 		
-		vehDao.listarVehiculo();
+		//vehDao.listarVehiculo();
 
-	
-		
 	
 		//Revision Técnica pruebas de métodos (Falta por completar)
 		
@@ -44,17 +52,15 @@ public class Main {
 		
 		RevisionTecnica r1= new RevisionTecnica();
 		r1.setCalificacion(10);
-		r1.setCodigo(500);
 		r1.setVehiculo(v);
 		
 		revDAO.addRevisionTecnica(r1); 
-		revDAO.listarRevisionTecnica();
 
-		revDAO.modificarRevisionTecnica(r1);
+		//revDAO.modificarRevisionTecnica(r1);
 		
-		revDAO.deleteRevisionTecnica(r1);
+		//revDAO.deleteRevisionTecnica(r1);
 		
-		revDAO.listarRevisionTecnica();
+		//revDAO.listarRevisionTecnica();
 		
 		HibernateUtils.getSessionFactory().close();
 		

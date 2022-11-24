@@ -22,20 +22,12 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 			RevisionTecnica r = new RevisionTecnica();
 			r.setCalificacion(0);
 			session.save(r);
-			
 			v.setRevisiontecnica(r);
 			
-			try {
-				v.setModelo("a");
-				session.save(v);
-				session.getTransaction().commit();
-				session.close();
-				
-			} catch (ConstraintViolationException e) {
-				session.getTransaction().rollback();
-				System.out.println("No se ha podido añadir el vehiculo");
+			session.save(v);
+			session.getTransaction().commit();
+			session.close();
 			
-			}
 			return true;
 
 		} catch (Exception e) {
