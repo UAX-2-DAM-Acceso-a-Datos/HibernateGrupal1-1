@@ -35,6 +35,8 @@ public class RevisionTecnicaImpl implements IRevisionTecnica{
 			return true;
 			
 		} catch (Exception e) {
+			Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
+			logger.error("[CuentaDao] [addRevisionTecnica] - Error" + e.getMessage());
 			return false;
 		}
 
@@ -54,6 +56,8 @@ public class RevisionTecnicaImpl implements IRevisionTecnica{
 			return true;
 			
 		} catch (Exception e) {
+			Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
+			logger.error("[CuentaDao] [modificarRevisionTecnica] - Error" + e.getMessage());
 			return false;
 		}
 
@@ -74,6 +78,8 @@ public class RevisionTecnicaImpl implements IRevisionTecnica{
 			return true;
 			
 		} catch (Exception e) {
+			Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
+			logger.error("[CuentaDao] [deleteRevisionTecnica] - Error" + e.getMessage());
 			return false;
 		}
 
