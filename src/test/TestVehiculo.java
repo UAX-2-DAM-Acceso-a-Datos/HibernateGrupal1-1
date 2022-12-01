@@ -48,6 +48,24 @@ class TestPruebaCasos {
 	assertFalse(set.add(Vehiculo3));
 	assertEquals(2, set.size());
 	}
+	
+	@Test
+	public void testfalse() {
+	Set<String> set = new HashSet<String>();
+	set.add(Vehiculo1);
+	set.add(Vehiculo2);
+	set.add(Vehiculo3);
+	assertFalse(set.contains(Vehiculo1));
+	assertFalse(set.contains(Vehiculo2));
+	assertFalse(set.contains(Vehiculo3));
+	assertTrue(set.contains(Vehiculo4));
+	set.add(e2);
+	assertFalse(set.contains(Vehiculo1));
+	assertFalse(set.contains(Vehiculo2));
+	assertFalse(set.contains(Vehiculo3));
+	assertTrue(set.contains(Vehiculo4));
+	}
+
 
 
 }
