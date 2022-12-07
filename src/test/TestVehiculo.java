@@ -1,71 +1,36 @@
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.Assert;
+import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.jupiter.api.Test;
 
 import dao.VehiculoDAOImpl;
+import entities.Vehiculo;
 
-class TestPruebaCasos {
+class TestVehiculo {
 
-	public static VehiculoDAOImpl vehiculo;
-	
-	@BeforeClass
-	public static void setUpClass() {
-		vehiculo = new VehiculoDAOImpl();
-	}
-	
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	public void modificarVehiculo() {
+		Vehiculo v1 = new Vehiculo();
+		v1.setMatricula("Joker");
+		v1.setMarca("Tesla");
+		v1.setModelo("Elmio");
+		VehiculoDAOImpl v2 = new VehiculoDAOImpl();
+		
+		Assert.assertTrue(v2.modificarVehiculo(v1));
 	}
 	
+	@Before
 	@Test
-	public void testEquals() {
-	Set<String> set1 = new HashSet<String>();
-	set1.add(Vehiculo1);
-	set1.add(Vehiculo2);
-	set1.add(Vehiculo3);
-	Set<String> set2 = new HashSet<String>();
-	assertFalse(set1.equals(set2));
-	set2.add(Vehiculo1);
-	assertFalse(set1.equals(set2));
-	set2.add(Vehiculo2);
-	assertFalse(set1.equals(set2));
-	set2.add(Vehiculo3);
-	assertTrue(set1.equals(set2));
-	assertTrue(set2.equals(set1));
-	
+	public void addVehiculo() {
+		Vehiculo v1 = new Vehiculo();
+		v1.setMatricula("Joker");
+		v1.setMarca("Tesla");
+		v1.setModelo("Elmio");
+		VehiculoDAOImpl v2 = new VehiculoDAOImpl();
+		
+		Assert.assertTrue(v2.addVehiculo(v1));
 	}
 	
-	@Test
-	public void testNotNull() {
-	Set<String> set = new HashSet<String>();
-	assertEquals(0, set.size());
-	assertTrue(set.add(Vehiculo1));
-	assertEquals(1, set.size());
-	assertTrue(set.add(Vehiculo2));
-	assertEquals(2, set.size());
-	assertFalse(set.add(Vehiculo3));
-	assertEquals(2, set.size());
-	}
-	
-	@Test
-	public void testfalse() {
-	Set<String> set = new HashSet<String>();
-	set.add(Vehiculo1);
-	set.add(Vehiculo2);
-	set.add(Vehiculo3);
-	assertFalse(set.contains(Vehiculo1));
-	assertFalse(set.contains(Vehiculo2));
-	assertFalse(set.contains(Vehiculo3));
-	assertTrue(set.contains(Vehiculo4));
-	set.add(e2);
-	assertFalse(set.contains(Vehiculo1));
-	assertFalse(set.contains(Vehiculo2));
-	assertFalse(set.contains(Vehiculo3));
-	assertTrue(set.contains(Vehiculo4));
-	}
-
-
-
 }

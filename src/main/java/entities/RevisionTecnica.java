@@ -41,10 +41,9 @@ public class RevisionTecnica {
 	}
 
 
-	public RevisionTecnica(int codigo, double calificacion, Vehiculo vehiculo) {
+	public RevisionTecnica(int codigo, double calificacion) {
 		this.codigo = codigo;
 		this.calificacion = calificacion;
-		this.vehiculo = vehiculo;
 	}
 	
 	public Vehiculo getVehiculo() {
