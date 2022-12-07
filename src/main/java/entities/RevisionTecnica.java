@@ -39,6 +39,13 @@ public class RevisionTecnica {
 	public void setCalificacion(double calificacion) {
 		this.calificacion = calificacion;
 	}
+
+
+	public RevisionTecnica(int codigo, double calificacion, Vehiculo vehiculo) {
+		this.codigo = codigo;
+		this.calificacion = calificacion;
+		this.vehiculo = vehiculo;
+	}
 	
 	public Vehiculo getVehiculo() {
 		return vehiculo;
@@ -48,14 +55,8 @@ public class RevisionTecnica {
 		this.vehiculo = vehiculo;
 	}
 	
-	
 	public RevisionTecnica() {
 		
-	}
-	
-	public RevisionTecnica(int codigo, double calificacion) {
-		this.codigo = codigo;
-		this.calificacion = calificacion;
 	}
 	
 	

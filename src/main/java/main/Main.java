@@ -39,7 +39,9 @@ public class Main {
 		r2.setVehiculo(v2);
 		
 		vDao.addVehiculo(v1);
-		revDAO.addRevisionTecnica(r1); 
+		vDao.addVehiculo(v2);
+		revDAO.addRevisionTecnica(r1);
+		revDAO.addRevisionTecnica(r2);
 		
 		HibernateUtils.getSessionFactory().close();
 	}
