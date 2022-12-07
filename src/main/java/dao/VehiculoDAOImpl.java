@@ -18,10 +18,7 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 	@Override
 	public boolean addVehiculo(Vehiculo v) {
 		try {			
-			logger.debug("DebugVehiculo");
 			logger.info("[CuentaDao] [addVehiculo] - Entrada al metodo");
-			logger.warn("WarnVehiculo");
-			logger.fatal("FatalVehiculo");
 			
 			Session session = HibernateUtils.getSessionFactory().openSession();
 			session.beginTransaction();
@@ -32,37 +29,36 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 			v.setRevisiontecnica(r);
 			
 			session.save(v);
+			logger.debug("[CuentaDao] [addVehiculo] - A�ades vehiculo: "+v);
 			session.getTransaction().commit();
 			session.close();
 			
-
+			logger.info("[CuentaDao] [addVehiculo] - Salida del metodo");
 		} catch (Exception e) {
-			logger.error("[CuentaDao] [addVehiculo] - Error" + e.getMessage());
-			return false;		
+			logger.error("[CuentaDao] [addVehiculo] - Error" + e.getMessage());		
 		}
 		return true;
 	}
 
-	//Modificar un vehículo
 	@Override
 	public boolean modificarVehiculo(Vehiculo v) {
 		try {
 			logger.info("[CuentaDao] [modificarVehiculo] - Entrada al metodo");
 
-			
 			Session sesion = HibernateUtils.getSessionFactory().openSession();
 			sesion.beginTransaction();
 			sesion.save(v);
+			logger.debug("[CuentaDao] [modificarVehiculo] - Modificas vehiculo: "+v);
 			sesion.getTransaction().commit();
 			sesion.close();
+			
+			logger.info("[CuentaDao] [modificarVehiculo] - Salida del metodo");
 		} catch (Exception e) {
 			logger.error("[CuentaDao] [modificarVehiculo] - Error" + e.getMessage());
-			return false;
 		}
 		return true;
 	}
 	
-	//Borrar un vehículo
 	@Override
 	public boolean deleteVehiculo(Vehiculo v) {
 		try {
@@ -71,12 +67,13 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 			Session sesion =HibernateUtils.getSessionFactory().openSession();
 			sesion.beginTransaction();
 			sesion.save(v);
+			logger.debug("[CuentaDao] [deleteVehiculo] - Eliminas vehiculo: "+v);
 			sesion.getTransaction().commit();
 			sesion.close();
 			
+			logger.info("[CuentaDao] [deleteVehiculo] - Salida del metodo");
 		} catch (Exception e) {
 			logger.error("[CuentaDao] [deleteVehiculo] - Error" + e.getMessage());
-			return false;
 		}
 		return true;
 	}
@@ -87,6 +84,8 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 		
 		Session session=HibernateUtils.getSessionFactory().openSession();
 		session.beginTransaction();
+		
+		logger.info("[CuentaDao] [listarVehiculo] - Salida del metodo");
 
 		List<Vehiculo> results=(List<Vehiculo>)session.createQuery("from Vehiculo").list();
 		
@@ -96,6 +95,4 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 				return results;
 	}
 	
-
-		
 }

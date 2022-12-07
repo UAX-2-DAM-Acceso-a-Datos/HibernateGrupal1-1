@@ -38,6 +38,7 @@ public class Main {
 		r2.setCalificacion(7);
 		r2.setVehiculo(v2);
 		
+		//Añadimos los vehiculos y las revisiones a la base de datos 
 		vDao.addVehiculo(v1);
 		vDao.addVehiculo(v2);
 		revDAO.addRevisionTecnica(r1);
