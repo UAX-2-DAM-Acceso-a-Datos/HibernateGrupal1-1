@@ -19,7 +19,7 @@ public class Main {
 		v1.setMatricula("Goku");
 		v1.setMarca("Tesla");	
 		try {
-			v1.setModelo("Sa");
+			v1.setModelo("Saaa");
 		} catch (ConstraintViolationException e) {
 			System.out.println("No se ha podido aniadir el vehiculo");
 		}

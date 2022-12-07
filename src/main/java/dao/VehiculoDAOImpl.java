@@ -13,17 +13,11 @@ import utils.HibernateUtils;
 
 public class VehiculoDAOImpl implements IVehiculoDAO {
 
-	//static Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
-	//logger.info("[CLASE]metodo-Mensaje informativo");
+	Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
 
-
-
-	//Añadir un vehículo
 	@Override
 	public boolean addVehiculo(Vehiculo v) {
-		try {
-			
-			Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
+		try {			
 			logger.debug("DebugVehiculo");
 			logger.info("[CuentaDao] [addVehiculo] - Entrada al metodo");
 			logger.warn("WarnVehiculo");
@@ -41,20 +35,18 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 			session.getTransaction().commit();
 			session.close();
 			
-			return true;
 
 		} catch (Exception e) {
-			Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
 			logger.error("[CuentaDao] [addVehiculo] - Error" + e.getMessage());
 			return false;		
 		}
+		return true;
 	}
 
 	//Modificar un vehículo
 	@Override
 	public boolean modificarVehiculo(Vehiculo v) {
 		try {
-			Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
 			logger.info("[CuentaDao] [modificarVehiculo] - Entrada al metodo");
 
 			
@@ -63,40 +55,34 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 			sesion.save(v);
 			sesion.getTransaction().commit();
 			sesion.close();
-			return true;
 		} catch (Exception e) {
-			Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
 			logger.error("[CuentaDao] [modificarVehiculo] - Error" + e.getMessage());
 			return false;
 		}
-
+		return true;
 	}
 	
 	//Borrar un vehículo
 	@Override
 	public boolean deleteVehiculo(Vehiculo v) {
 		try {
-			Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
 			logger.info("[CuentaDao] [deleteVehiculo] - Entrada al metodo");
 			
-			Vehiculo sesion = Vehiculo.getCurrentSession();
+			Session sesion =HibernateUtils.getSessionFactory().openSession();
 			sesion.beginTransaction();
-			Object Vehiculo = null;
-			sesion.delete(Vehiculo);
-			((entities.Vehiculo) sesion.getTransaction()).commit();
+			sesion.save(v);
+			sesion.getTransaction().commit();
 			sesion.close();
-			return true;
+			
 		} catch (Exception e) {
-			Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
 			logger.error("[CuentaDao] [deleteVehiculo] - Error" + e.getMessage());
 			return false;
 		}
-		
+		return true;
 	}
 
 	@Override
 	public List<Vehiculo> listarVehiculo() {
-		Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
 		logger.info("[CuentaDao] [listarVehiculo] - Entrada al metodo");
 		
 		Session session=HibernateUtils.getSessionFactory().openSession();

@@ -12,11 +12,10 @@ import utils.HibernateUtils;
 
 public class RevisionTecnicaImpl implements IRevisionTecnica{
 
-	//Añadir revisión técnica
+	Logger logger = Logger.getLogger(RevisionTecnicaImpl.class);
 	@Override
 	public boolean addRevisionTecnica(RevisionTecnica r1) {
 		try {
-			Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
 			logger.info("[CuentaDao] [addRevisionTecnica] - Entrada al metodo");
 			
 			Session session=HibernateUtils.getSessionFactory().openSession();
@@ -32,20 +31,17 @@ public class RevisionTecnicaImpl implements IRevisionTecnica{
 			session.save(r1);
 			session.getTransaction().commit();
 			System.out.println(r1);
-			return true;
 			
 		} catch (Exception e) {
-			Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
 			logger.error("[CuentaDao] [addRevisionTecnica] - Error" + e.getMessage());
 			return false;
 		}
-
+		return true;
 	}
 	//Modificar revisión técnica
 	@Override
 	public boolean modificarRevisionTecnica(RevisionTecnica r1) {
 		try {
-			Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
 			logger.info("[CuentaDao] [modificarRevisionTecnica] - Entrada al metodo");
 			
 			Session sesion =HibernateUtils.getSessionFactory().openSession();
@@ -53,21 +49,18 @@ public class RevisionTecnicaImpl implements IRevisionTecnica{
 			sesion.save(r1);
 			sesion.getTransaction().commit();
 			sesion.close();
-			return true;
 			
 		} catch (Exception e) {
-			Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
 			logger.error("[CuentaDao] [modificarRevisionTecnica] - Error" + e.getMessage());
 			return false;
 		}
-
+		return true;
 	}
 	
 	//Borrar revisión técnica
 	@Override
 	public boolean deleteRevisionTecnica(RevisionTecnica r1) {
 		try {
-			Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
 			logger.info("[CuentaDao] [deleteRevisionTecnica] - Entrada al metodo");
 			
 			Session sesion =HibernateUtils.getSessionFactory().openSession();
@@ -75,20 +68,17 @@ public class RevisionTecnicaImpl implements IRevisionTecnica{
 			sesion.delete(r1);
 			sesion.getTransaction().commit();
 			sesion.close();
-			return true;
 			
 		} catch (Exception e) {
-			Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
 			logger.error("[CuentaDao] [deleteRevisionTecnica] - Error" + e.getMessage());
 			return false;
 		}
-
+		return true;
 	}
 	
 	//Listar revisiones técnicas
 	@Override
 	public List<RevisionTecnica> listarRevisionTecnica() {
-		Logger logger = Logger.getLogger(VehiculoDAOImpl.class);
 		logger.info("[CuentaDao] [listarRevisionTecnica] - Entrada al metodo");
 		
 		Session session=HibernateUtils.getSessionFactory().openSession();
