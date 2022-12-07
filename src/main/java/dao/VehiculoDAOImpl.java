@@ -87,7 +87,7 @@ public class VehiculoDAOImpl implements IVehiculoDAO {
 		
 		logger.info("[CuentaDao] [listarVehiculo] - Salida del metodo");
 
-		List<Vehiculo> results=(List<Vehiculo>)session.createQuery("from Vehiculo").list();
+		List<Vehiculo> results=(List<Vehiculo>)session.createQuery("from vehiculo").list();
 		
 				for(Vehiculo v :results) {
 					System.out.println(results);

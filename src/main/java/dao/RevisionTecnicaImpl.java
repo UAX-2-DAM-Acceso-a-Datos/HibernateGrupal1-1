@@ -85,7 +85,7 @@ public class RevisionTecnicaImpl implements IRevisionTecnica{
 		
 		logger.info("[CuentaDao] [listarRevisionTecnica] - Salida del metodo");
 		
-		List<RevisionTecnica> results=(List<RevisionTecnica>)session.createQuery("from RevisionTecnica").list();
+		List<RevisionTecnica> results=(List<RevisionTecnica>)session.createQuery("from revisiontecnica").list();
 		
 				for(RevisionTecnica r :results) {
 					System.out.println(results);
