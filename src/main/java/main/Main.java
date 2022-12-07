@@ -11,61 +11,36 @@ import utils.HibernateUtils;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		new Main();
-	}
-	
-	public Main() {
-		//Vehiculo pruebas de métodos
-		VehiculoDAOImpl vehDao = new VehiculoDAOImpl();
-		
-		Vehiculo v = new Vehiculo();
-		v.setMatricula("Goku");
-		v.setMarca("Te");
-		v.setModelo("Sa");
-		
-	
-		try {
-			v.setModelo("Sa");
-		} catch (ConstraintViolationException e) {
-			
-			System.out.println("No se ha podido añadir el vehiculo");
-		}
-		 
-		 
-		
-		Vehiculo v2 = new Vehiculo();
-		v2.setMatricula("Krilin");
-		v2.setMarca("Te");
-		v2.setModelo("Sa");
-	
-		vehDao.addVehiculo(v);
-
-		vehDao.modificarVehiculo(v2);
-		
-		//vehDao.deleteVehiculo(v2);
-		
-		//vehDao.listarVehiculo();
-
-	
-		//Revision Técnica pruebas de métodos (Falta por completar)
-		
+		VehiculoDAOImpl vDao = new VehiculoDAOImpl();
 		RevisionTecnicaImpl revDAO= new RevisionTecnicaImpl();
 		
+		//Creamos los vehiculos
+		Vehiculo v1 = new Vehiculo();
+		v1.setMatricula("Goku");
+		v1.setMarca("Tesla");	
+		try {
+			v1.setModelo("Sa");
+		} catch (ConstraintViolationException e) {
+			System.out.println("No se ha podido aniadir el vehiculo");
+		}
+
+		Vehiculo v2 = new Vehiculo();
+		v2.setMatricula("Krilin");
+		v2.setMarca("Tesla");
+		v2.setModelo("Sa2");
+	
+		//Creamos las revisiones
 		RevisionTecnica r1= new RevisionTecnica();
 		r1.setCalificacion(10);
-		r1.setVehiculo(v);
+		r1.setVehiculo(v1);
 		
+		RevisionTecnica r2= new RevisionTecnica();
+		r2.setCalificacion(7);
+		r2.setVehiculo(v2);
+		
+		vDao.addVehiculo(v1);
 		revDAO.addRevisionTecnica(r1); 
-
-		//revDAO.modificarRevisionTecnica(r1);
-		
-		//revDAO.deleteRevisionTecnica(r1);
-		
-		//revDAO.listarRevisionTecnica();
 		
 		HibernateUtils.getSessionFactory().close();
-		
 	}
-
 }
